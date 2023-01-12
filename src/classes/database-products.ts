@@ -29,21 +29,7 @@ const databaseProducts = [
 ]
 
 
-export class DatabaseMock
-    implements DatabaseProductsInterface {
-    id: string;
-    name: string;
-    price: number;
-    productStock: number;
-
-    //id: string, name: string, price: number, productStock: number
-    constructor() {
-        // this.id = id;
-        // this.name = name;
-        // this.price = price;
-        // this.productStock = productStock;
-    }
-
+export class DatabaseProducts {
     getDatabaseProducts(ids: string[]): DatabaseProductsInterface[] {
         const products: DatabaseProductsInterface[] = []
         for (const id of ids) {
@@ -52,16 +38,5 @@ export class DatabaseMock
         }
         return products
     }
-
-    addProduct() {
-        databaseProducts.push({
-            id: this.id,
-            name: this.name,
-            price: this.price,
-            productStock: this.productStock
-
-        })
-    }
-
 }
 
